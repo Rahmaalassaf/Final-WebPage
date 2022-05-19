@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <script
+      src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/@mediapipe/control_utils/control_utils.js"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils/drawing_utils.js"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/@mediapipe/face_mesh/face_mesh.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+    <script
+      defer
+      language="javascript"
+      type="text/javascript"
+      src="sketch.js"
+    ></script>
+    <script
+      defer
+      language="javascript"
+      type="text/javascript"
+      src="detection.js"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.0-beta1/css/bootstrap.min.css"
+      integrity="sha512-o/MhoRPVLExxZjCFVBsm17Pkztkzmh7Dp8k7/3JrtNCHh0AQ489kwpfA3dPSHzKDe8YCuEhxXq3Y71eb/o6amg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+  </head>
+
+  <body>
+    <button
+      class="btn btn-primary"
+      type="button"
+      data-bs-toggle="offcanvas"
+      data-bs-target="#offcanvasTop"
+      aria-controls="offcanvasTop"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+        width="24"
+        height="24"
+      >
+        <path fill="none" d="M0 0h24v24H0z" />
+        <path
+          d="M12 13.172l4.95-4.95 1.414 1.414L12 16 5.636 9.636 7.05 8.222z"
+        />
+      </svg>
+    </button>
+
+    <div
+      class="offcanvas offcanvas-top"
+      tabindex="-1"
+      id="offcanvasTop"
+      aria-labelledby="offcanvasTopLabel"
+    >
+      <div class="offcanvas-header">
+        <h1 class="offcanvas-title" id="offcanvasTopLabel">
+          Facial Recognition Instructions:
+        </h1>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="offcanvas"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="offcanvas-body">
+        <div class="facial-step">
+          <h5 class="step-title">Step One:</h5>
+          <p class="step-desc">
+            Press "E" on the keyboard to access the face mesh
+          </p>
+        </div>
+        <div class="facial-step">
+          <h5 class="step-title">Step Two:</h5>
+          <p class="step-desc">
+            Start connecting the dots on the face mesh to draw the desired shape
+          </p>
+        </div>
+        <div class="facial-step">
+          <h5 class="step-title">Step Three:</h5>
+          <p class="step-desc">
+            Control and maneuver the color slider on the right to change the
+            colors of your shape
+          </p>
+        </div>
+        <div class="facial-comment">
+          // --- If you happen to make a mistake you can simply press "D" on the
+          keyboard to delete the shape --- //
+        </div>
+        <div class="facial-step">
+          <h5 class="step-title">Step Four:</h5>
+          <p class="step-desc">
+            Press "C" on the keyboard to complete the shape you created
+          </p>
+        </div>
+        <div class="facial-step">
+          <h5 class="step-title">Step Five:</h5>
+          <p class="step-desc">
+            Press "E" on the keyboard again to remove the face mesh and access
+            the drawing on your face
+          </p>
+        </div>
+        <div class="facial-step">
+          <h5 class="step-title">Step Six:</h5>
+          <p class="step-desc">
+            Press "S" on the keyboard to take a screenshot of your design!
+          </p>
+        </div>
+      </div>
+    </div>
+    <video id="video"></video>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.0-beta1/js/bootstrap.min.js"
+      integrity="sha512-Hqe3s+yLpqaBbXM6VA0cnj/T56ii5YjNrMT9v+us11Q81L0wzUG0jEMNECtugqNu2Uq5MSttCg0p4KK0kCPVaQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+  </body>
+</html>
